@@ -8,15 +8,15 @@
   Placeholder : levée d'erreur pour indiquer que l'exercice doit être implémenté.
 */
 function multiplication(a, b) {
-  // Vérifier le nombre d'arguments
-  if (arguments.length !== 2) return undefined;
-
-  // Vérifier les types
+if (arguments.length !== 2) return undefined;
   if (typeof a !== 'number' || typeof b !== 'number') return undefined;
   if (isNaN(a) || isNaN(b)) return undefined;
 
-  return a * b;
+  const result = a * b;
+  return Object.is(result, -0) ? 0 : result;
+
 }
+console.log("La multiplication de (17, 2) = " + multiplication(17, 2));
 
 // Ne pas modifier la ligne ci-dessous
 module.exports = { multiplication }
