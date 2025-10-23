@@ -13,8 +13,17 @@
 function max(a, b) {
   // Exercice non implémenté : retourner le plus grand ou un message si égaux
   // Placeholder neutre : retourne null pour indiquer non-implémentation
-  return null;
+  if (arguments.length !== 2) return null;
+
+  if (typeof a !== 'number' || typeof b !== 'number') return null;
+  if (isNaN(a) || isNaN(b)) return null;
+
+  if (a === b) return "Les deux nombres sont égaux. ";
+  return a > b ? a : b;
 }
+console.log("Le plus grand nombre entre 8 et 5 = ", max(8, 5));
+console.log("Le plus grand nombre entre 10 et 10 = ", max(10, 10));
+console.log("Le plus grand nombre entre '12' et 9 = ", max("12", 9));
 
 // Ne pas modifier la ligne ci-dessous
 module.exports = { max }
